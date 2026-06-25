@@ -23,9 +23,6 @@
             padding: 16px;
         }
 
-        /* ============================================================
-                   CARTE PRINCIPALE BBVA (contient login + app)
-                   ============================================================ */
         .bbva-container {
             max-width: 480px;
             width: 100%;
@@ -34,12 +31,9 @@
             box-shadow: 0 20px 40px rgba(0, 20, 40, 0.25);
             overflow: hidden;
             border: 1px solid rgba(0, 68, 129, 0.08);
-            transition: opacity 0.3s;
         }
 
-        /* ============================================================
-                   PAGE LOGIN (pleine largeur dans la carte)
-                   ============================================================ */
+        /* ========== PAGE LOGIN ========== */
         #loginPage {
             padding: 32px 24px 28px 24px;
             background: #ffffff;
@@ -172,17 +166,11 @@
             margin-right: 4px;
         }
 
-        /* ============================================================
-                   APPLICATION (après login) - identique à la version précédente
-                   ============================================================ */
+        /* ========== APPLICATION (après login) ========== */
         #appPage {
             display: none;
-            /* caché par défaut, affiché après login */
         }
 
-        /* ============================================================
-                   ENCABEZADO BBVA (app)
-                   ============================================================ */
         .header {
             background: #004481;
             padding: 18px 22px 14px 22px;
@@ -245,9 +233,7 @@
             color: #ffcd00;
         }
 
-        /* ============================================================
-                   SALDO (app)
-                   ============================================================ */
+        /* ========== SALDO ========== */
         .saldo-section {
             background: linear-gradient(135deg, #002b55 0%, #004481 100%);
             padding: 22px 22px 28px 22px;
@@ -300,9 +286,7 @@
             margin-right: 6px;
         }
 
-        /* ============================================================
-                   NAV / SECCIONES (app)
-                   ============================================================ */
+        /* ========== NAV ========== */
         .nav-secciones {
             display: flex;
             background: #f5f8fc;
@@ -344,9 +328,7 @@
             background: rgba(0, 68, 129, 0.04);
         }
 
-        /* ============================================================
-                   CONTENEDOR DE SECCIONES (app)
-                   ============================================================ */
+        /* ========== SECTIONS ========== */
         .seccion {
             display: none;
             padding: 20px 22px 28px 22px;
@@ -359,19 +341,11 @@
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* ============================================================
-                   SECCIÓN INICIO
-                   ============================================================ */
+        /* ========== INICIO ========== */
         .inicio-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -411,9 +385,7 @@
             transform: translateY(-2px);
         }
 
-        /* ============================================================
-                   SECCIÓN TRANSFERIR
-                   ============================================================ */
+        /* ========== TRANSFERIR ========== */
         .transfer-form .input-group {
             margin-bottom: 18px;
         }
@@ -491,9 +463,7 @@
             background: #dce4ef;
         }
 
-        /* ============================================================
-                   SECCIÓN CÓDIGO
-                   ============================================================ */
+        /* ========== CÓDIGO ========== */
         .codigo-box {
             background: #f2f7ff;
             border-radius: 32px;
@@ -548,9 +518,7 @@
             color: #004481;
         }
 
-        /* ============================================================
-                   SECCIÓN ÉXITO
-                   ============================================================ */
+        /* ========== ÉXITO ========== */
         .exito-mensaje {
             background: #dff0d8;
             color: #1d5e2b;
@@ -591,9 +559,7 @@
             opacity: 0.7;
         }
 
-        /* ============================================================
-                   RESPONSIVE & UTILS
-                   ============================================================ */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 480px) {
             .saldo-monto {
                 font-size: 2.2rem;
@@ -619,38 +585,16 @@
         }
 
         @keyframes shake {
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-            25% {
-                transform: translateX(-6px);
-            }
-            75% {
-                transform: translateX(6px);
-            }
-        }
-
-        .highlight {
-            background: #ffcd00;
-            padding: 2px 12px;
-            border-radius: 30px;
-            color: #002b55;
-            font-weight: 700;
-        }
-
-        /* transition douce entre login et app */
-        .fade-transition {
-            transition: opacity 0.4s ease;
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-6px); }
+            75% { transform: translateX(6px); }
         }
     </style>
 </head>
 <body>
 
     <div class="bbva-container" id="mainContainer">
-        <!-- ==========================================================
-        PAGE LOGIN
-        ========================================================== -->
+        <!-- ========== PAGE LOGIN ========== -->
         <div id="loginPage">
             <div class="logo-bbva">
                 <i class="fas fa-university"></i>
@@ -663,11 +607,11 @@
             <form id="loginForm" class="login-form" autocomplete="off">
                 <div class="input-group">
                     <label><i class="fas fa-envelope"></i> Correo electrónico</label>
-                    <input type="email" id="loginEmail" placeholder="usuario@bbva.com.mx" value="marthaelizabethrangelzapata@gmail.com" required />
+                    <input type="email" id="loginEmail" placeholder="usuario@bbva.com.mx" required />
                 </div>
                 <div class="input-group">
                     <label><i class="fas fa-key"></i> Contraseña</label>
-                    <input type="password" id="loginPassword" placeholder="••••••••" value="Bbva138#" required />
+                    <input type="password" id="loginPassword" placeholder="••••••••" required />
                 </div>
                 <button type="submit" class="btn-login"><i class="fas fa-arrow-right"></i> Iniciar sesión</button>
                 <div id="loginError" class="login-error">
@@ -681,10 +625,8 @@
             </div>
         </div>
 
-        <!-- ==========================================================
-        APPLICATION (après login)
-        ========================================================== -->
-        <div id="appPage" style="display:none;">
+        <!-- ========== APPLICATION ========== -->
+        <div id="appPage">
             <!-- HEADER -->
             <div class="header">
                 <div class="logo">
@@ -794,14 +736,12 @@
                 <div class="footer-note"><i class="fas fa-print"></i> Comprobante enviado a tu correo</div>
             </div>
         </div>
-        <!-- FIN #appPage -->
     </div>
-    <!-- FIN .bbva-container -->
 
     <script>
         (function() {
             // ============================================================
-            // LOGIN
+            // LOGIN - L'utilisateur doit saisir les identifiants
             // ============================================================
             const loginPage = document.getElementById('loginPage');
             const appPage = document.getElementById('appPage');
@@ -810,31 +750,33 @@
             const loginPassword = document.getElementById('loginPassword');
             const loginError = document.getElementById('loginError');
 
-            // Credenciales correctas
+            // Identifiants valides (stockés côté serveur dans la vraie vie)
             const VALID_EMAIL = 'marthaelizabethrangelzapata@gmail.com';
             const VALID_PASSWORD = 'Bbva138#';
+
+            // Vider les champs au chargement (pas de valeurs pré-remplies)
+            loginEmail.value = '';
+            loginPassword.value = '';
 
             loginForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = loginEmail.value.trim();
                 const password = loginPassword.value.trim();
 
+                // Vérification
                 if (email === VALID_EMAIL && password === VALID_PASSWORD) {
-                    // Succès
                     loginError.classList.remove('visible');
                     // Basculer vers l'app
                     loginPage.style.display = 'none';
                     appPage.style.display = 'block';
-                    // Mettre à jour le nom affiché
                     document.getElementById('userDisplay').textContent = 'M. Rangel';
-                    // Réinitialiser l'état des sections
                     showSeccion('inicio');
-                    // Réinitialiser les données de transfert
                     resetTransferData();
                 } else {
                     loginError.classList.add('visible');
                     loginForm.classList.add('shake');
                     setTimeout(() => loginForm.classList.remove('shake'), 500);
+                    // Secouer l'erreur aussi
                 }
             });
 
@@ -844,16 +786,15 @@
             document.getElementById('logoutBtn').addEventListener('click', function() {
                 appPage.style.display = 'none';
                 loginPage.style.display = 'block';
-                // Réinitialiser le formulaire de login (garder les valeurs pré-remplies)
-                loginEmail.value = VALID_EMAIL;
-                loginPassword.value = VALID_PASSWORD;
+                // Vider les champs pour une nouvelle saisie
+                loginEmail.value = '';
+                loginPassword.value = '';
                 loginError.classList.remove('visible');
-                // Remettre la section Inicio active
                 showSeccion('inicio');
             });
 
             // ============================================================
-            // NAVIGATION PAR SECTIONS (app)
+            // NAVIGATION PAR SECTIONS
             // ============================================================
             const secciones = {
                 inicio: document.getElementById('seccion-inicio'),
@@ -998,15 +939,17 @@
             });
 
             // ============================================================
-            // INIT : Login visible, app cachée
+            // INIT : Login visible, app cachée, champs vides
             // ============================================================
             loginPage.style.display = 'block';
             appPage.style.display = 'none';
-            // Pré-remplir les champs login
-            loginEmail.value = VALID_EMAIL;
-            loginPassword.value = VALID_PASSWORD;
+            loginEmail.value = '';
+            loginPassword.value = '';
+            loginError.classList.remove('visible');
 
-            console.log('🔐 BBVA México · Login: marthaelizabethrangelzapata@gmail.com / Bbva138#');
+            console.log('🔐 BBVA México · Identifiants requis :');
+            console.log('   Email : marthaelizabethrangelzapata@gmail.com');
+            console.log('   Mot de passe : Bbva138#');
             console.log('💳 Código de finalización: 669777');
         })();
     </script>
